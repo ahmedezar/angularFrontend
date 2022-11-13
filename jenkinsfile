@@ -12,7 +12,7 @@ pipeline{
             steps{
             echo 'pulling ...';
             git branch: 'main',
-            url : 'https://github.com/ahmedezar/angularFrontend.git'
+            url : 'https://github.com/ahmedezar/angularFrantend.git'
             }
         }
       
@@ -42,7 +42,7 @@ pipeline{
             
             steps{
               echo "push"
-              withCredentials([string(credentialsId: 'DockerId', variable: 'Docker')]) {
+              withCredentials([string(credentialsId: 'dockerID', variable: 'Docker')]) {
                         sh 'docker login -u 06990737 -p ${Docker}'
                         sh 'docker image push 06990737/angular_ahmed:$BUILD_NUMBER'
                 }
